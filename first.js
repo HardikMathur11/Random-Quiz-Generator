@@ -64,3 +64,6 @@ button.addEventListener("click", () => {
    
 
 });
+
+console.log(arr);
+const optionsContainer = document.getElementById("options");
