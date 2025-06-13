@@ -67,3 +67,9 @@ button.addEventListener("click", () => {
 
 console.log(arr);
 const optionsContainer = document.getElementById("options");
+
+console.log(optionsContainer);
+console.log("Hello");
+
+//I am fixing some bugs
+console.log("Bug fixed");
