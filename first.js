@@ -75,3 +75,7 @@ console.log("Hello");
 console.log("This is a bug in the code");
 //lets fix the bug
 console.log("Bug fixed");
+
+
+console.log("This is a new feature added to the code");
+//This is a new feature added to the codegit add .
