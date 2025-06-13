@@ -72,4 +72,6 @@ console.log(optionsContainer);
 console.log("Hello");
 
 //I am fixing some bugs
+console.log("This is a bug in the code");
+//lets fix the bug
 console.log("Bug fixed");
