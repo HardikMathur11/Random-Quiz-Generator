@@ -1,43 +1,45 @@
-Quiz Generator
-This is a simple quiz application built using HTML, CSS, and JavaScript. It presents 5 random questions from a predefined question bank and calculates the final score based on the user's selected answers.
+# Simple JavaScript Quiz App
 
-Features
-Displays 5 random questions each time the page is loaded
+This is a basic quiz application built with vanilla JavaScript. It displays multiple-choice questions, allows users to select answers, and shows the final score. The quiz ensures each question is unique and disables further input after submission.
 
-Provides multiple-choice options with radio buttons
+## Features
 
-Evaluates and displays the score after submission
+- 10 general knowledge questions
+- Random selection of 5 unique questions per quiz
+- Multiple-choice radio buttons for answers
+- Score calculation and display
+- Disables form after submission to prevent resubmission
 
-Disables resubmission and options after the quiz is submitted
+## How to Use
 
-Simple and clean user interface
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/your-repo-name.git
+   ```
+2. **Navigate to the project folder:**
+   ```sh
+   cd your-repo-name
+   ```
+3. **Open `index.html` in your browser.**
 
-Technologies Used
-HTML5
+## Project Structure
 
-CSS3
+```
+/Git02
+  ├── index.html
+  ├── first.js
+  └── style.css
+```
 
-JavaScript (Vanilla)
+- `index.html` – Main HTML file
+- `first.js` – JavaScript logic for quiz
+- `style.css` – (Optional) Styling for the quiz
 
-How to Use
-Clone the repository:
+## Customization
 
-git clone https://github.com/your-username/quiz-generator.git
-cd quiz-generator
-Open the index.html file in any modern web browser.
+- Add or edit questions in the `arr` array in `first.js`.
+- Change the number of random questions by modifying the logic in the `RandomQuestion` function.
 
-No server or framework is required. This is a purely frontend application.
+## License
 
-Question Format
-Each question in the JavaScript array follows this format:
-
-
-{
-  question: "Which planet is known as the Red Planet?",
-  options: ["Earth", "Mars", "Jupiter", "Venus"],
-  answer: "Mars"
-}
-You can add, remove, or modify questions in the question bank as needed.
-
-License
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License. You are free to use, modify, and distribute it with attribution.
