@@ -53,29 +53,86 @@ const  arr = [
   }
 ];
 
+function RandomQuestion(questionBank){
+    
+    const arr = [];
+    let i = 0;
+    let length = questionBank.length;
+    while(i<5)
+    {
+      const index = Math.floor(Math.random()*length);
+      arr.push(questionBank[index]);
+      [questionBank[index],questionBank[length-1]] = [questionBank[length-1],questionBank[index]];
+      length--,i++;
+    }
 
+    return arr;
+}
+const randomQuestions = RandomQuestion(arr);
+const  button = document.querySelector("button"); 
+  const container = document.getElementById("container");
+randomQuestions.forEach(({question, options , answer} , idx) => {
+  const  q = document.createElement("h3");
+  q.textContent = `${idx+1 }` + ". " + question;
 
-const  button = document.querySelector("button");   
-button.addEventListener("click", () => {    
-    const get =  arr[Math.floor(Math.random() * arr.length)];
-   const res = document.getElementById("result");
-   res.innerHTML = get.question + "<br>" + "<br>" ;
+  const q1 = document.createElement("div");
+  q1.appendChild(q);
+ 
+  // inp.type = "radio";
+  // inp.name = question;
+  // inp.value
 
+  options.forEach((options) => {
+      const opt = document.createElement("input");
+      opt.textContent = options;
+      opt.type = "radio";
+      opt.name = question;
+      opt.value = options; 
+
+      const label = document.createElement("label");
+    label.appendChild(opt);
+    label.appendChild(document.createTextNode(options));
+
+    q1.appendChild(label);
+    q1.appendChild(document.createElement("br"));
+      
+  })
+  container.appendChild(q1);
+}
+);
+  //Now checking the result
+  button.addEventListener("click", () => {
+    let score = 0;
+    arr.forEach(({question, answer}) => {
+      const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+      if (selectedOption && selectedOption.value === answer) {
+        score++;
+      }
+    });
+    const resuly = document.getElementById("result"); 
+    resuly.textContent = "Your score is: " + score + "/" + arr.length;
    
+    //now stop event listner 
+    
+     // Disable the button
+  button.disabled = true;
+
+  // Disable all radio inputs
+  document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.disabled = true;
+  });
 
 });
 
-console.log(arr);
-const optionsContainer = document.getElementById("options");
 
-console.log(optionsContainer);
-console.log("Hello");
+// button.addEventListener("click", () => {    
+//     const get =  arr[Math.floor(Math.random() * arr.length)];
+//    const res = document.getElementById("result");
+//    res.innerHTML = get.question + "<br>" + "<br>" ;
 
-//I am fixing some bugs
-console.log("This is a bug in the code");
-//lets fix the bug
-console.log("Bug fixed");
+   
+
+// });
 
 
-console.log("This is a new feature added to the code");
-//This is a new feature added to the codegit add .
+
