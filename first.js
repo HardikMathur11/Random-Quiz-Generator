@@ -110,7 +110,7 @@ randomQuestions.forEach(({question, options , answer} , idx) => {
       }
     });
     const resuly = document.getElementById("result"); 
-    resuly.textContent = "Your score is: " + score + "/" + arr.length;
+    resuly.textContent = "Your score is: " + score + "/" + "5";
    
     //now stop event listner 
     
